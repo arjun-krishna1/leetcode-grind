@@ -1,3 +1,11 @@
+# WEEKLY
+- 1 topic per day
+- array /  matrix, string, searching & sorting, LinkedList, Binary Trees / Binary Search Trees, Greedy, BackTracking, Stacks & Queues, Heap, Graph, Trie, Dynamic Programming, Bit Manipulation
+- 10 hour leetcode challenge 
+- 1 random per day
+- 5 easy, 3 medium, 2 hard
+
+# OVERALL
 - FROM https://leetcode.com/discuss/study-guide/1390557/how-to-improve-my-coding-skills by coderana
 - It looks like you simply skimmed through those questions without having a complete grasp of underlying concept.
 "Quality" is any day better than "Quantity".

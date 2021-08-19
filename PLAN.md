@@ -1,6 +1,6 @@
 # WEEKLY
 - 1 topic per day
-- array /  matrix, string, searching & sorting, LinkedList, Binary Trees / Binary Search Trees, Greedy, BackTracking, Stacks & Queues, Heap, Graph, Trie, Dynamic Programming, Bit Manipulation
+- array /  matrix, string TODAY, searching & sorting, LinkedList, Binary Trees / Binary Search Trees, Greedy, BackTracking, Stacks & Queues, Heap, Graph, Trie, Dynamic Programming, Bit Manipulation
 - 10 hour leetcode challenge 
 - 1 random per day
 - 5 easy, 3 medium, 2 hard

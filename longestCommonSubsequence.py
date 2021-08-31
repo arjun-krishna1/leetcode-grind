@@ -1,5 +1,6 @@
 '''
 https://leetcode.com/problems/longest-common-subsequence/
+https://leetcode.com/submissions/detail/547317748/
 # Self-critique:
 ## Positive:
 - I'm very happy that I came up with a working, efficient algorithm for this complex problem!!!! 🚀 🎉

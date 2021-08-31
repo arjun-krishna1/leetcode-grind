@@ -40,6 +40,24 @@ class Solution(object):
             get b
             check if b is in cache
                 return this index and index of b 
+    BETTER SOLUTION I DIDN'T COME UP WITH
+    # you can check and build hashmap in one loop
+    def twoSum(self, nums, target):
+        '''
+        :type nums: List[int]
+        :type target: int
+        :rtype: List[int]
+        '''
+        cache = defaultdict(lambda: -1)
+        
+        # build cache and check in same pass
+        for i in range(len(nums)):
+            complement = target - nums[i]
+            # if we have the answer in hashmap, return it
+            if cache[complement] != -1:
+                return [cache[complement], i]
+            
+            cache[nums[i]] = i
     """
     from collections import defaultdict
     def twoSum(self, nums, target):

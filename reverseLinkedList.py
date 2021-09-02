@@ -59,6 +59,29 @@ algorithm:
         
     return curr
     
+    class Solution(object):
+        def reverseList(self, head):
+            """
+            :type head: ListNode
+            :rtype: ListNode
+            """
+            if not head or not head.next:
+                return head
+
+            prev = head
+            curr = head.next
+            prev.next = None
+
+            while curr:
+                temp = curr.next
+                curr.next = prev
+                prev = curr
+                curr = temp
+
+            return prev
+
+
+    
 
 '''
 class Solution(object):
@@ -67,18 +90,26 @@ class Solution(object):
         :type head: ListNode
         :rtype: ListNode
         """
+        def helper(curr):
+            # base case: if only one node, it is reversed
+            if not curr.next:
+                return curr
+
+            # recursive case
+            else:
+                # recursively reverse the rest of the linked list
+                new_head = helper(curr.next)
+                # the tail of the reversed linked list should now point to curr
+                curr.next.next = curr
+                # current is now the tail and should point to None
+                curr.next = None
+                # return the head of the reversed linked list
+                return new_head
+                
+        # edge case, if 0 or 1 node, already reversed
         if not head or not head.next:
-            return head
-        
-        prev = head
-        curr = head.next
-        prev.next = None
-        
-        while curr:
-            temp = curr.next
-            curr.next = prev
-            prev = curr
-            curr = temp
-            
-        return prev
+                return head
+                
+        # recursively reverse list
+        return helper(head)
         

@@ -49,8 +49,8 @@ OPTIMIZATION two pointer
 think about two pointers, fast and slow
 fast moves twice, slow moves once
 if fast gets to end, we know there is no cycle, if end no cycle
-if there is a cycle, if you repeat this enough times fast and slow will be the same eventually  
-'''
+if there is a cycle, if you repeat this enough times fast and slow will be the same eventually 
+
 class Solution(object):
      def hasCycle(self, head):
         """
@@ -73,6 +73,33 @@ class Solution(object):
         
         # if they were the same there was a cycle
         if fast == slow:
+            return True
+        
+        # else there is no cycle
+        return False
+        
+'''
+class Solution(object):
+     def hasCycle(self, head):
+        """
+        :type head: ListNode
+        :rtype: bool
+        """
+        # edge case: if list is empty or has an ending, no cycle
+        if not head or not head.next:
+            return False
+        
+        history = set()
+        curr = head
+ 
+        # while we are not at the end of the list and this node is not visited
+        while curr and curr not in history:
+            # mark this node as visited
+            history.add(curr)
+            curr = curr.next
+        
+        # if this was visited there is a ycle
+        if curr and curr in history:
             return True
         
         # else there is no cycle

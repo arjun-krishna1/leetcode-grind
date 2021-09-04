@@ -1,3 +1,4 @@
+'''
 """
 https://leetcode.com/problems/longest-substring-without-repeating-characters/
 GIVEN
@@ -73,4 +74,64 @@ class Solution:
                 max_len = end - start
 
         return max_len
+'''
+'''
+GIVEN
+INPUT
+s: string
+
+OUTPUT
+length of the longest substring without repeating characters
+
+ALGORITHM
+BRUTE FORCE
+two nested for loops generate every possible substring
+    if substring doesn't have repeating chars update max_count if needed
+    
+OPTIMIZATIONS
+SLIDING WINDOW
+instead of considering every possible substring
+just have two pointers, left and right which define a substring
+create a hashmap to hold the chars in the current substring
+keep moving right to the right until there is a repeated character
+update maxlen if needed
+move left to the right and reduce its count
+
+dp approach
+
+'''
+from collections import defaultdict
+class Solution:
+    def lengthOfLongestSubstring(self, s: str) -> int:
+        # base case: if less than 1 characters, no repeating chars
+        # return all of s
+        if len(s) <= 1:
+            return len(s)
+        
+        # initialize pointers and result
+        l, r, res = 0, 0, 0
+        # initialize hashmap to hold number of each char
+        count = defaultdict(lambda: 0)
+        
+        # keep moving and making window larger while it is within the string
+        while r < len(s):
+            # add this new character to the count
+            count[s[r]] += 1
+            # if it is a repeating character
+            # this is an invalid substring
+            while count[s[r]] > 1:
+                # make the window smaller by
+                # moving the left pointer right and updating its count
+                # print(l)
+                count[s[l]] -= 1
+                l += 1
+            
+            # since this character is not repeating
+            # this is a valid substring
+            else:
+                res = max(r - l + 1, res)
+                r += 1
+            # print(l, r)
+            # print(dict(count))
+        return res
         

@@ -9,3 +9,9 @@
 - https://probmlcourse.github.io/csc412/
 - https://csc413-uoft.github.io/2021/
 - http://www.cs.toronto.edu/~urtasun/courses/CSC2541/CSC2541_Winter16.html
+
+# Backpropogation
+- use chain rule
+- first compute gradient of output layer
+- ue that to sequentially calculate the gradient of those closer to the input layer
+- use gradient of each weight to update it
